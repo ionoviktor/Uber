@@ -1,3 +1,11 @@
+$main-color: #1eacc7
+$second-color: #ff5656
+	
+=btn_hover
+	&:hover
+		background-image: none
+		background-color: $main-color
+	
 * 
 	font-family: 'Roboto', sans-serif 
 header 
@@ -17,11 +25,11 @@ a
 	padding: 13px 70px 
 	margin: 0 
 	list-style: none 
-	.menu_link 
+	&_link 
 		color: #ffffff 
 		font-size: 15px 
 		font-weight: 300 
-	.menu_item 
+	&_item 
 		border-right: 2px dotted black 
 		padding-right: 46px 
 .subheader 
@@ -29,23 +37,23 @@ a
 	width: 100% 
 	height: 84px 
 	background-color: rgba(0, 0, 0, .6) 
-	.subheader_logo 
+	&_logo 
 		display: block 
 		max-width: 100% 
 		margin-top: 16px 
-	.subheader_official 
+	&_official 
 		margin-top: 6px 
 		color: #ffffff 
 		opacity: 0.5 
 		font-size: 13px 
 		font-weight: 100 
-	.subheader_call 
+	&_call 
 		margin-top: 19px 
 		font-size: 12px 
 		font-weight: 300 
 		color: #ffffff 
 		text-align: right 
-	.subheader_phone 
+	&_phone 
 		display: block 
 		border-top: 8px 
 		color: #ffffff 
@@ -53,11 +61,11 @@ a
 		font-weight: 400 
 		text-transform: uppercase 
 		text-align: right 
-	.subheader_btn 
+	&_btn 
 		margin-top: 19px 
 		width: 178px 
 		height: 52px 
-		background-image: linear-gradient(0.0deg, #1eacc7 0%, #4ce2ff 100%) 
+		background-image: linear-gradient(0.0deg, $main-color 0%, #4ce2ff 100%) 
 		border: none 
 		border-radius: 4px 
 		box-shadow: inset 0px -3px 0px 0px rgba(0,0,0,0.11) 
@@ -67,12 +75,13 @@ a
 		text-transform: uppercase 
 		text-shadow: 1px 1px 0px rgba(0,0,0,0.2) 
 		color: #ffffff 
+		+btn_hover
 .promo 
 	margin-top: 50px 
 	min-height: 800px 
 	background: url('../img/bg/main_bg.jpg') center center/cover no-repeat 
 	padding: 150px 0 135px 0 
-	.promo_header 
+	&_header 
 		color: #ffffff 
 		font-size: 60px 
 		font-weight: 700 
@@ -80,7 +89,7 @@ a
 		line-height: 60px 
 		margin: 0 
 		text-align: center 
-	.promo_subheader 
+	&_subheader 
 		color: #ffffff 
 		font-size: 36px 
 		font-weight: 700 
@@ -89,19 +98,19 @@ a
 		margin: 0 
 		margin-top: 22px 
 		text-align: center 
-	.promo_descr 
+	&_descr 
 		font-size: 18px 
 		line-height: 24px 
 		font-weight: 400 
 		color: #ffffff 
 		text-align: center 
 		margin-top: 23px 
-	.promo_btn 
+	&_btn 
 		display: block 
 		margin: 118px auto 0 auto 
 		width: 265px 
 		height: 69px 
-		background-image: linear-gradient(0.0deg, #1eacc7 0%, #4ce2ff 100%) 
+		background-image: linear-gradient(0.0deg, $main-color 0%, #4ce2ff 100%) 
 		border: none 
 		border-radius: 4px 
 		box-shadow: inset 0px -4px 0px 0px rgba(0,0,0,0.11) 
@@ -110,63 +119,78 @@ a
 		text-transform: uppercase 
 		text-shadow: 1px 1px 0px rgba(0,0,0,0.2) 
 		color: #ffffff 
+		+btn_hover
 .benefits 
 	min-height: 900px 
-	.benefits_wrapper 
+	padding: 71px 0 65px 0
+	&_wrapper 
 		display: flex 
 		margin-top: 40px 
-	.benefits_item 
+	&_item 
 		display: flex 
 		justify-content: center 
 		align-items: center 
 		margin-left: 35px 
-		.benefits_round 
+		&_round 
 			display: flex 
 			justify-content: center 
 			align-items: center 
 			width: 113px 
 			height: 113px 
-			background-color: #1eacc7 
+			background-color: $main-color
 			border-radius: 100% 
-		.benefits_info 
+		&_info 
 			max-width: 340px 
 			margin-left: 26px 
-		.benefits_head 
+		&_head 
 			font-size: 17px 
 			line-height: 21px 
 			font-weight: 400 
-			color: #1eacc7 
-		.benefits_descr 
+			color: $main-color
+		&_descr 
 			font-size: 15px 
 			font-weight: 300 
 			color: #202020 
 .label
-	display: block 
+	position: relative
 	margin: 0 auto 
-	margin-top: 79px 
-	width: 112px 
 	height: 24px 
+	width: 112px 
+	padding: 5px 12px
 	background-color: #000000 
-	text-align: center 
-	line-height: 23px 
+	color: #ffffff
 	font-size: 11px 
-	font-weight: 100 
+	font-weight: 300 
 	text-transform: uppercase 
-	color: #ffffff 
+	text-align: center 
+	z-index: 2
+	&_white
+		background-color: #ffffff
+		color: #000000
 .title
+	position: relative
+	margin-bottom: 0
 	margin-top: 38px 
-	font-size: 38px 
+	color: #222222 
+	font-size: 38px
+	line-height: 38px
 	font-weight: 700 
 	text-transform: uppercase 
-	color: #222222 
 	text-align: center
+	z-index: 2
+	&_white
+		color: #ffffff
 
 .subtitle
+	position: relative
 	margin-top: 19px
+	color: #222222
 	font-size: 17px
 	font-weight: 400
-	color: #222222
 	text-align: center
+	z-index: 2
+	&_white
+		color: #ffffff
 
 .mobile
 	min-height: 864px
@@ -214,4 +238,61 @@ a
 			margin: 0 auto
 			border-radius: 100%
 			cursor: pointer
-			
+			&:before
+				content: ''
+				display: block
+				width: 14px
+				height: 2px
+				background-color: $main-color
+				transition: 0.3s all
+			&:after
+				content: '' 
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				display: block
+				height: 14px
+				width: 2px
+				background-color: $main-color
+				transition: 0.3s all
+			&:hover
+				&:before, &:after
+					background-color: $second-color
+				
+
+.choice
+	position: relative
+	min-height: 896px
+	padding: 57px 0 138px 0
+	background: url('../img/bg/mobile_app.png') center (center/cover) no-repeat
+	&_img
+		position: relative
+		display: block
+		margin: 56px auto 0 auto
+		z-index: 2
+	&_descr
+		font-size: 17px
+		line-height: 24px
+		font-weight: 300
+		color: #222222
+		text-align: center
+	.black
+		position: absolute 
+		top: 0
+		left: 0
+		height: 499px
+		width: 100%
+		background-color: #070716
+		z-index: 1
+	
+		
+.require
+	padding: 68px 0 84px 0
+	&_block
+		margin: 33px 0
+		&_nmb
+			margin-bottom: 0px
+	&_title
+		color: #1ca8c3
+		font-size: 22px
+		font-weight: 400
